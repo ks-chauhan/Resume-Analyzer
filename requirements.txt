@@ -1,0 +1,18 @@
+streamlit>=1.37.0
+pdfplumber>=0.11.7
+
+# Embeddings + similarity search
+sentence-transformers>=2.7.0
+numpy>=1.26.4
+scikit-learn>=1.5.0
+
+# Data handling 
+pandas>=2.1.4
+
+# OpenAI + LangChain
+openai>=1.30.4
+langchain>=0.2.12
+langchain-openai>=0.1.8
+
+# Env
+python-dotenv>=1.0.0

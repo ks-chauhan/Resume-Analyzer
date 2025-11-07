@@ -1,0 +1,17 @@
+.env
+
+# cache
+__pycache__/
+*.pyc
+
+# Virtual environment folders
+venv/
+.env/
+.venv/
+
+# Streamlit session/state
+.streamlit/
+
+# IDE folders
+.idea/
+.vscode/
