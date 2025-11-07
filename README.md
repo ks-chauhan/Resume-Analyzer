@@ -52,3 +52,6 @@ OPENAI_API_KEY = "your_openai_api_key"
 
 streamlit run app/main.py
 
+---
+
+The site is deployed here : https://dayworks-resume-analyzer.streamlit.app/
