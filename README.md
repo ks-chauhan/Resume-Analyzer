@@ -36,9 +36,9 @@ cd Resume-Analyzer
 
 2. Create and activate a Python virtual environment
 
-python -m venv venv
-venv\Scripts\activate (Windows)
-source venv/bin/activate (Mac/Linux)
+python -m venv venv  
+venv\Scripts\activate (Windows)  
+source venv/bin/activate (Mac/Linux)  
 
 3. Install required dependencies
 
@@ -54,4 +54,5 @@ streamlit run app/main.py
 
 ---
 
-The site is deployed here : https://dayworks-resume-analyzer.streamlit.app/
+The site is deployed here : https://dayworks-resume-analyzer.streamlit.app/  
+the site is explained here : https://www.loom.com/share/840c413e9ac54629a6bbbf2152800112
