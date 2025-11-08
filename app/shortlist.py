@@ -1,5 +1,6 @@
 import streamlit as st
 
+# Parent Directory Import
 import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -13,13 +14,16 @@ def Main():
     st.title("Shortlist Resumes")
     st.markdown("This is where you can shortlist resumes based on job descriptions.")
 
+    # Layout
     col1, col2 = st.columns(2)
     with col1:
+        # Job Description Input
         st.subheader("Job Description")
         job_description = st.text_area("Enter Job Description",
                                        height=300,
                                        placeholder="Paste the job description here...")
     with col2:
+        # Resume Upload
         st.subheader("Resume Upload")
         resume_files = st.file_uploader("Upload Resume Files",
                                         accept_multiple_files = True,
@@ -28,28 +32,33 @@ def Main():
         if resume_files:
             st.success(f"{len(resume_files)} resumes uploaded successfully!")
         
+        # Number of Resumes to Shortlist
         N = st.number_input("Number of Resumes to Shortlist")
     
     button = st.button("Shortlist Resumes")
     if button:
+        # Input Validations
         if not job_description.strip():
             st.error("A job description is required for analysis.")
             return
         if not resume_files:
             st.error("Please upload atleast one resume file for analysis.")
             return
-        if N <= 0:
+        if N <= 0 or N > len(resume_files):
             st.error("Please enter a valid number of resumes to shortlist.")
             return
         
+        # Shortlisting Process
         with st.spinner("Shortlisting resumes..."):
             resumes_dict = {}
 
+            # Parse each resume and store text in dictionary
             for resume_file in resume_files:
                 resume_text = pdf_parser(resume_file)
                 resumes_dict[resume_file.name[0:-4]] = resume_text
             results = process_multiple_resumes(resumes_dict, job_description.strip(), int(N))
             
+            # Display Results
             for item in results:
                 st.subheader(f"Resume: {item['file_name']}")
 

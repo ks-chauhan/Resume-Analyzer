@@ -1,6 +1,7 @@
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
+# Function to get top N resumes based on similarity
 def get_top_n_resumes(job_embedding, resume_embeddings, n):
     """
     Get the top N resumes based on cosine similarity to the job description embedding.
@@ -12,7 +13,8 @@ def get_top_n_resumes(job_embedding, resume_embeddings, n):
     """
     
     similarity_scores = []
-
+    
+    # Calculate cosine similarity for each resume
     for file_name, embedding in resume_embeddings.items():
         similarity = cosine_similarity(
             np.array(job_embedding).reshape(1, -1),

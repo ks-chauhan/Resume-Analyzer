@@ -1,5 +1,6 @@
 import pdfplumber
 
+# Function to parse PDF resumes (pdfplumber is lightweight and effective as compared to langchain pdf parser)
 def pdf_parser(file_obj: bytes) -> str:
     """
     Extract text from a single PDF resume file.

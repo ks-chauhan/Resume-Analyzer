@@ -2,6 +2,7 @@ from sentence_transformers import SentenceTransformer
 
 embed_model = SentenceTransformer('all-MiniLM-L6-v2')
 
+# Function to create embeddings for given text
 def create_embedding(text: str):
     """
     Create embedding for the given text using a pre-trained model.
@@ -9,6 +10,7 @@ def create_embedding(text: str):
     embedding = embed_model.encode(text)
     return embedding
 
+# Function to create embeddings for a batch of texts
 def resume_batch_create_embeddings(resume_dict: dict):
     """
     Create embeddings for a batch of texts.
